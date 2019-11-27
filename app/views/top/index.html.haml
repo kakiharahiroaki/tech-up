@@ -1,2 +1,12 @@
-%h1 Top#index
-%p Find me in app/views/top/index.html.erb
+.loginPage
+
+  .video-container
+    %video{:autoplay => "", :loop => "", :muted => "", :playsinline => "", :src => "https://assets.mixkit.co/videos/601/601-720.mp4"}
+
+  .container
+    .loginPage_contents
+      %h1.h4.loginPage_contents_title 
+        メンターを見つけ、エンジニアとして爆速で成長しよう
+      = link_to "メールアドレスでログインする", "#", class: "btn loginPage_contents_btn"
+      = link_to "アカウント作成はこちら", "#", class: "btn signupPage_contents_btn"
+  
