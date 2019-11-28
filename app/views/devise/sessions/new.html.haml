@@ -1,17 +1,35 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
+.video-container
+  %video{:autoplay => "", :loop => "", :muted => "", :playsinline => "", :src => "https://assets.mixkit.co/videos/99584/99584-720.mp4"}
+
+
+.side-container
+  
+  .logo
+    = image_tag("logo.png", size:"250x200")
+  
+  .message-container
+    %span.messege1{style: "text-decoration: none"}>メンター
+    を見つけ、
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+    %span.messege2{style: "text-decoration: none"}>エンジニア
+    として
+    %span.messege3{style: "text-decoration: none"}> 爆速で成長
+  
+  
+  .form-container
+    %h4 ログイン情報入力
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field_email
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレスを入力してください"
+      .field_password
+        = f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "パスワードを入力してください"
+      - if devise_mapping.rememberable?
+        .field_checkbox
+          = f.check_box :remember_me
+          = f.label :remember_me
+      .actions
+        = f.submit "爆速成長をはじめる！！",  class: "loginBtn"
+    = render "devise/shared/links"
+
+  .tech-up_description
+    = image_tag("logo.png",size:"80x60")

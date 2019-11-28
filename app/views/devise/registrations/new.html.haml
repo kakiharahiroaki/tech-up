@@ -30,7 +30,7 @@
           = f.password_field :password_confirmation, class:"form-control", placeholder: "パスワードを再度入力してください", autocomplete: "off"
         .form-group
           %div
-            %label{:for => ""} 登録選択
+            %label{:for => ""} どちらで登録するか選択してください(mentor="教える側"、mentee=”教わる側”)
           .form-check.form-check-inline
             = f.radio_button :select, "mentor", class: "form-check-input", id: "inlineRadio1"
             %label.form-check-label{:for => "inlineRadio1"} mentor
