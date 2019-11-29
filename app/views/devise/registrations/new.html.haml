@@ -46,7 +46,7 @@
         .form-group
           .text-form
             %label 自己紹介文
-            = text_area :user, :self_introduction, maxlength: "1000", rows: "10", class:"form-control",placeholder: "●スキルレベル"
+            = text_area :user, :self_introduction, maxlength: "1000", rows: "10", class:"form-control",placeholder: "＜書き方例＞\r\n\●メンティーで登録する場合\r\n\学習中の言語：HTML/CSS、PHP、Paython\r\n\現在の目標：プログラマーとして転職\r\n\Tech-Upを利用する理由：個人アプリ作成の手助けをしてくれるメンターを探すため\r\n\r\n●メンターで登録する場合\r\n職業：サーバーサイドエンジニア\r\n実務経験：HTML/CSS 3年、Javascript 2年、Ruby/Rails 2年\r\n対応可能日時：平日19時以降"
         .text-center
           = f.submit "はじめる", class: "btn submitBtn"
           = render "devise/shared/links"
