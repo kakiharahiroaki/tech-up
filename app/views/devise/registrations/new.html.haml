@@ -1,33 +1,39 @@
 %body
+  .header
+    .titles
+      アカウント情報入力
   .sinupPage
-    %header.header
-      %div アカウントを作成
-    .container
+    
+    .form_container
+      .user_icon
+        =====
+        = icon('fas','biking')
+        %i.fas.fa-biking.fa-spin
       = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class:"mt-5" }) do |f|
         = devise_error_messages!
         %label.rounded-circle.userProfileImg{:for => "file_photo"}
-          .userProfileImg_description 画像をアップロード
-          %i.fas.fa-camera.fa-3x
-          = f.file_field :img, id: "file_photo"
+          .userProfileImg_description 
+            画像をアップロード
+          .img_icon
+            %i.fas.fa-camera.fa-3x
+            = f.file_field :img, class: "file_photo"
         #userImgPreview.userImgPreview
           %img#thumbnail.userImgPreview_content{:accept => "image/*", :src => ""}/
-          %p.userImgPreview_text 画像をアップロード済み
+          -# %p.userImgPreview_text 画像をアップロード済み
         .form-group
-          %label 名前
-          = f.text_field :name, class: "form-control", placeholder: "名前を入力してください"
+          .name-form
+            = f.text_field :name, class: "form-control", placeholder: "名前を入力してください"
+        %br/
         .form-group
-          %label Eメールアドレス
-          = f.email_field :email, class: "form-control", placeholder: "emailを入力してください" ,autocomplete: "email"
+          .email-form
+            = f.email_field :email, class: "form-control", placeholder: "emailを入力してください" ,autocomplete: "email"
+        %br/
         .form-group
-          %label パスワード
-          - if @minimum_password_length
-            %em
-              (#{@minimum_password_length}文字以上入力してください)
-          %br/
-          = f.password_field :password, class: "form-control", placeholder:"パスワードを入力してください", autocomplete: "off"
+          .password-form
+            = f.password_field :password, class: "form-control", placeholder:"パスワードを入力してください", autocomplete: "off"
         .form-group
-          %label 確認用パスワード
-          = f.password_field :password_confirmation, class:"form-control", placeholder: "パスワードを再度入力してください", autocomplete: "off"
+          .password-form
+            = f.password_field :password_confirmation, class:"form-control", placeholder: "パスワードを再度入力してください", autocomplete: "off"
         .form-group
           %div
             %label{:for => ""} どちらで登録するか選択してください(mentor="教える側"、mentee=”教わる側”)
@@ -38,8 +44,41 @@
             = f.radio_button :select, "mentee", class: "form-check-input", id: "inlineRadio2"
             %label.form-check-label{:for => "inlineRadio2"} mentee
         .form-group
-          %label 自己紹介文
-          = text_area :user, :self_introduction, maxlength: "1000", rows: "10", class:"form-control",placeholder: "●スキルレベル"
+          .text-form
+            %label 自己紹介文
+            = text_area :user, :self_introduction, maxlength: "1000", rows: "10", class:"form-control",placeholder: "●スキルレベル"
         .text-center
           = f.submit "はじめる", class: "btn submitBtn"
           = render "devise/shared/links"
+
+    .tech-up_description
+      = image_tag("logo.png", size:"150x90")
+      に登録してる方のサンプル
+      %br/
+      %br/
+      .mentee-container
+      %h6●メンティーとして登録されてる方の場合
+      %br/
+      ・プログラミングスクールを卒業したのに思うようにスキルが伸びず、就職が不安な方
+      %br/
+      ・未経験からプログラマーに転職はしたもの自分のスキルの無さに挫折しそうな方
+      %br/
+      ・自分のプログラミングスキルを短期間で伸ばしたい方
+      %br/
+      %br/
+      %br/
+      .mentor-container
+      %h6●メンターとして登録されてる方の場合
+      %br/
+      ・場所や時間を選ばず、完全リモートで仕事をしたい方
+      %br/
+      ・本業とは別に副業をされたい方
+      %br/
+      ・将来、プログラミング教育分野で起業したい方
+    .balnk
+  .fotter_container
+    .tech-up_logo
+      = image_tag("logo.png", size:"150x90")
+
+
+
