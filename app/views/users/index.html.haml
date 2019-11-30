@@ -1,4 +1,30 @@
-.users
-  - @user.each do |user|
-    %div= user.name
-
+.topPage
+  %nav.nav
+    %ul
+      %li.personIcon= link_to(content_tag(:i, "", class: 'fas fa-2x fa-user'), user_path(current_user.id))
+      %li.appIcon= link_to image_tag("logo.png"), action: "index"
+  #tinderslide
+    %ul
+      - @user.each do |user|
+        %li{"data-user_id" => "#{user.id}"}
+          
+          .userImage
+            = image_tag user.img.url(:thumb)
+          .userName
+            = user.name
+          .userIntroduction
+            = user.self_introduction
+          .like
+          .dislike
+    .noUser 近くにお相手がいません。
+  #actionBtnArea.actions
+    %a.dislike{:href => "#"}
+      %i.fas.fa-times.fa-2x
+    %a.like{:href => "#"}
+      %i.fas.fa-heart.fa-2x
+:javascript
+  $("#tinderslide").jTinder();
+  $('.actions .like, .actions .dislike').click(function(e){
+  	e.preventDefault();
+  	$("#tinderslide").jTinder($(this).attr('class'));
+  });
