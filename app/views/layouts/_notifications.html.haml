@@ -1,5 +1,3 @@
 .notifications
-  - if flash[:notice]
-    %p= flash[:notice]   
-  - if flash[:alert]
-    %p= flash[:alert]
+  %p.notice= notice
+  %p.alert= alert
