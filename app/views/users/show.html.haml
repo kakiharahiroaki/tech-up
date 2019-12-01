@@ -1,19 +1,21 @@
 %body
-  .usershowPage
-    .container
-      %header.header
-        .header_logo
-          = link_to image_tag("logo.png", size:"150x90"), users_path
-      .userInfo
-        .userInfo_img
-          = image_tag @user.img.url(:thumb)
-        .userInfo_name= @user.name
-        .userInfo_selfIntroduction= @user.self_introduction
-      - if current_user.id == @user.id
-        .userAction
-          .userAction_edit.userAction_common
-            = link_to(content_tag(:i, "", class: 'fas fa-edit fa-2x'), edit_user_registration_path)
-            %span 情報を編集
-          .userAction_logout.userAction_common
-            = link_to(content_tag(:i, "", class: 'fas fa-cog fa-2x'), destroy_user_session_path, method: :delete)
-            %span ログアウト
+  .container
+    .header_logo
+      = link_to image_tag("logo.png", size:"200x110"), users_path
+    .userPage_title
+      自己プロフィール
+    .userInfo
+      = image_tag @user.img.url(:thumb)
+    .userInfo_name
+      = @user.name
+    .userInfo_selfIntroduction
+      = @user.self_introduction
+      
+    - if current_user.id == @user.id
+      .userAction
+        .userAction_edit.userAction_common
+          = link_to(content_tag(:i, "", class: 'fas fa-edit fa-3x'), edit_user_registration_path)
+          %span 情報を編集
+        .userAction_logout.userAction_common
+          = link_to(content_tag(:i, "", class: 'fas fa-cog fa-3x'), destroy_user_session_path, method: :delete)
+          %span ログアウト

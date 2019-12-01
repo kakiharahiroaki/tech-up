@@ -1,0 +1,46 @@
+body{
+  text-align: center;
+  position: relative;
+}
+.container{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.userPage_title{
+  width:30%;
+  margin-left: 35%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  font-weight: bold;
+  color: white;
+  font-size: 2rem;
+  background-color: #6cd1ac;
+
+}
+.userInfo_name{
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 2em;
+}
+.userInfo_selfIntroduction{
+  margin-bottom: 2%;
+  text-align: left;
+  height: 30%;
+  padding: 25px;
+  font-size: 150%;
+  border: solid 10px #6cd1ac;
+  background-color: #d2f6e9;
+}
+.userAction{
+  display: flex;
+  margin-left: 40%;
+  padding-bottom: 5%;
+  font-size: 120%;
+}
+
+.userAction_edit.userAction_common{
+  
+}
