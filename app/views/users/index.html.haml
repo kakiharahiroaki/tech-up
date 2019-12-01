@@ -18,9 +18,9 @@
     .noUser 近くにお相手がいません。
   #actionBtnArea.actions
     %a.dislike{:href => "#"}
-      %i.far.fa-thumbs-down.fa-2x
+      %i.far.fa-thumbs-down.fa-2x{style: "color:green;"}
     %a.like{:href => "#"}
-      %i.far.fa-thumbs-up.fa-2x
+      %i.far.fa-thumbs-up.fa-2x{style: "color:green;"}
 :javascript
   $("#tinderslide").jTinder();
   $('.actions .like, .actions .dislike').click(function(e){
