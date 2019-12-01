@@ -2,8 +2,8 @@
   .usershowPage
     .container
       %header.header
-        %p.header_logo
-          = link_to image_tag("test.png"), users_path
+        .header_logo
+          = link_to image_tag("logo.png", size:"150x90"), users_path
       .userInfo
         .userInfo_img
           = image_tag @user.img.url(:thumb)
