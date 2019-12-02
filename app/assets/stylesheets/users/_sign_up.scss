@@ -13,6 +13,7 @@ body{
     display: block;
     font-size: 35px;
     font-style: italic;
+    font-weight: bold;
   }
   .sinupPage{
     display: flex;
@@ -34,23 +35,46 @@ body{
         .password-form{
           border: solid 3px #6cd1ac;
         }
+        .radio_text{
+          margin-top: 3%;
+          font-size: 18px;
+          color: #b20000;
+        }
+        .form-check-label{
+          display: block; /* ブロックレベル要素化する */
+          float: left; /* 要素の左寄せ・回り込を指定する */
+          margin: 5px; /* ボックス外側の余白を指定する */
+          width: 120px; /* ボックスの横幅を指定する */
+          height: 60px; /* ボックスの高さを指定する */
+          padding-left: 5px; /* ボックス内左側の余白を指定する */
+          padding-right: 5px; /* ボックス内御右側の余白を指定する */
+          color: #b20000; /* フォントの色を指定 */
+          font-size: 25px;
+          text-align: center; /* テキストのセンタリングを指定する */
+          line-height: 45px; /* 行の高さを指定する */
+          cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+          border: 5px solid #6cd1ac;/* ボックスの境界線を実線で指定する */
+          border-radius: 5px; /* 角丸を指定する */
+        }
         .text-form{
+          margin-top: 5%;
           border: solid 3px #6cd1ac;
+        }
+        .btn-submitBtn{
+          background-color: pink;
         }
       } 
     .user_icon{
       font-size: 4em;
     }
     }
-
     .tech-up_description{
       width: 30%;
       background-color: rgb(255, 255, 255);
       padding-right: 5%;
       padding-top: 5%;
-      .tech-up_logo{
-        margin-left: 20%;
-        margin-right: 20%;
+      .text-area{
+        text-align: left;
       }
     }
   }
