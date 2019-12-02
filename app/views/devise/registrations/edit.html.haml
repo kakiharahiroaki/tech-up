@@ -1,36 +1,42 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
+.userEdit_page
+  %h2
+    登録情報変更画面
+  = image_tag @user.img.url(:thumb)
+
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = render "devise/shared/error_messages", resource: resource
+
+    %label.rounded-circle.userProfileImg{:for => "file_photo"}
+    .userProfileImg_description 
+      画像をアップロード
       %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+      = f.file_field :img, class: "file_photo"
+    .field-container
+      .field-email
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class:"email_form"
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        %div
+          Currently waiting confirmation for: #{resource.unconfirmed_email}
+      .field-password
+        = f.label :password
+        %i (変更無ければ、空欄のままで)
+        %br/
+        = f.password_field :password, autocomplete: "new-password", class:"password_form", placeholder:"新しく設定するパスワードを入力してください（６文字以上）"
+        - if @minimum_password_length
+          %br/
+      .field-password
+        = f.label :password_confirmation
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password", class:"password_form", placeholder:"新しく設定するパスワードを入力してください（６文字以上）"
+      
+      .field-text
+        %label 自己紹介文
+        = text_area :user, :self_introduction, maxlength: "1000",  class:"form-control",placeholder: "＜書き方例＞\r\n\●メンティーで登録する場合\r\n\学習中の言語：HTML/CSS、PHP、Paython\r\n\現在の目標：プログラマーとして転職\r\n\Tech-Upを利用する理由：個人アプリ作成の手助けをしてくれるメンターを探すため\r\n\r\n●メンターで登録する場合\r\n職業：サーバーサイドエンジニア\r\n実務経験：HTML/CSS 3年、Javascript 2年、Ruby/Rails 2年\r\n対応可能日時：平日19時以降"
+      .field-password
+        = f.password_field :current_password, autocomplete: "current-password", class:"currentPassword_form", placeholder:"現在のパスワードを入力してから更新ボタンを押してください"
+    .actions
+      = f.submit "更新する", class:"upDate_btn"
+    
+  = link_to "Back", :back
