@@ -36,13 +36,13 @@
             = f.password_field :password_confirmation, class:"form-control", placeholder: "パスワードを再度入力してください", autocomplete: "off"
         .form-group
           %div
-            %label.radio_text{:for => ""} どちらで登録するか選択してください(mentor="プログラミングを教える人"、mentee=”プログラミングを教わる人”)
+            %label.radio_text{:for => ""} どちらで登録するか選択してください(メンター：プログラミングを教える人"、メンティー：プログラミングを教わる人)
           .form-check.form-check-inline
             = f.radio_button :select, "mentor", class: "form-check-input", id: "inlineRadio1"
-            %label.form-check-label{:for => "inlineRadio1"} mentor
+            %label.form-check-label{:for => "inlineRadio1"} メンター
           .form-check.form-check-inline
             = f.radio_button :select, "mentee", class: "form-check-input", id: "inlineRadio2"
-            %label.form-check-label{:for => "inlineRadio2"} mentee
+            %label.form-check-label{:for => "inlineRadio2"} メンティー
         .form-group
           .text-form
             %label 自己紹介文

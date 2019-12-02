@@ -43,11 +43,11 @@ body{
         .form-check-label{
           display: block; /* ブロックレベル要素化する */
           float: left; /* 要素の左寄せ・回り込を指定する */
-          margin: 5px; /* ボックス外側の余白を指定する */
-          width: 120px; /* ボックスの横幅を指定する */
+          margin: 10px; /* ボックス外側の余白を指定する */
+          width: 150px; /* ボックスの横幅を指定する */
           height: 60px; /* ボックスの高さを指定する */
-          padding-left: 5px; /* ボックス内左側の余白を指定する */
-          padding-right: 5px; /* ボックス内御右側の余白を指定する */
+          padding-left: 7px; /* ボックス内左側の余白を指定する */
+          padding-right: px; /* ボックス内御右側の余白を指定する */
           color: #b20000; /* フォントの色を指定 */
           font-size: 25px;
           text-align: center; /* テキストのセンタリングを指定する */
