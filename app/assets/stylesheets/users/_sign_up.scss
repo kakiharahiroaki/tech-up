@@ -40,16 +40,34 @@ body{
           font-size: 18px;
           color: #b20000;
         }
-        .form-check-label{
+        .form-check-label-mentor{
           display: block; /* ブロックレベル要素化する */
           float: left; /* 要素の左寄せ・回り込を指定する */
           margin: 10px; /* ボックス外側の余白を指定する */
-          width: 150px; /* ボックスの横幅を指定する */
+          width: 180px; /* ボックスの横幅を指定する */
           height: 60px; /* ボックスの高さを指定する */
-          padding-left: 7px; /* ボックス内左側の余白を指定する */
-          padding-right: px; /* ボックス内御右側の余白を指定する */
-          color: #b20000; /* フォントの色を指定 */
+          padding-left: 10px; /* ボックス内左側の余白を指定する */
+          padding-right: 10px; /* ボックス内御右側の余白を指定する */
+          color: #f00e0e; /* フォントの色を指定 */
           font-size: 25px;
+          font-weight: bold;
+          text-align: center; /* テキストのセンタリングを指定する */
+          line-height: 45px; /* 行の高さを指定する */
+          cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+          border: 5px solid #6cd1ac;/* ボックスの境界線を実線で指定する */
+          border-radius: 5px; /* 角丸を指定する */
+        }
+        .form-check-label-mentee{
+          display: block; /* ブロックレベル要素化する */
+          float: left; /* 要素の左寄せ・回り込を指定する */
+          margin: 10px; /* ボックス外側の余白を指定する */
+          width: 180px; /* ボックスの横幅を指定する */
+          height: 60px; /* ボックスの高さを指定する */
+          padding-left: 10px; /* ボックス内左側の余白を指定する */
+          padding-right: 10px; /* ボックス内御右側の余白を指定する */
+          color: #1133f5; /* フォントの色を指定 */
+          font-size: 25px;
+          font-weight: bold;
           text-align: center; /* テキストのセンタリングを指定する */
           line-height: 45px; /* 行の高さを指定する */
           cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
@@ -58,15 +76,26 @@ body{
         }
         .text-form{
           margin-top: 5%;
-          border: solid 3px #6cd1ac;
-        }
-        .btn-submitBtn{
-          background-color: pink;
+          border: solid 5px #6cd1ac;
         }
       } 
     .user_icon{
       font-size: 4em;
     }
+    .signupBtn{
+      display: block;
+      margin-left: 44%;
+      margin-top: 2%;
+      margin-bottom: 1%;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      padding-left: 3%;
+      padding-right: 3%;
+      font-size: 20px;
+      background: linear-gradient(#6cd1ac, #f6f9fa);
+      border: solid 1px black;
+    }
+
     }
     .tech-up_description{
       width: 30%;
@@ -81,6 +110,7 @@ body{
   
   .fotter_container{
     position: relative;
+    margin-top: 2%;
     padding-top: 50px;
     padding-bottom: 50px;
     background: linear-gradient(#f6f9fa, #6cd1ac);

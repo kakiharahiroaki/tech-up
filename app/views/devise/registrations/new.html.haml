@@ -39,16 +39,16 @@
             %label.radio_text{:for => ""} どちらで登録するか選択してください(メンター：プログラミングを教える人"、メンティー：プログラミングを教わる人)
           .form-check.form-check-inline
             = f.radio_button :select, "mentor", class: "form-check-input", id: "inlineRadio1"
-            %label.form-check-label{:for => "inlineRadio1"} メンター
+            %label.form-check-label-mentor{:for => "inlineRadio1"} メンター
           .form-check.form-check-inline
             = f.radio_button :select, "mentee", class: "form-check-input", id: "inlineRadio2"
-            %label.form-check-label{:for => "inlineRadio2"} メンティー
+            %label.form-check-label-mentee{:for => "inlineRadio2"} メンティー
         .form-group
           .text-form
             %label 自己紹介文
             = text_area :user, :self_introduction, maxlength: "1000", rows: "10", class:"form-control",placeholder: "＜書き方例＞\r\n\●メンティーで登録する場合\r\n\学習中の言語：HTML/CSS、PHP、Paython\r\n\現在の目標：プログラマーとして転職\r\n\Tech-Upを利用する理由：個人アプリ作成の手助けをしてくれるメンターを探すため\r\n\r\n●メンターで登録する場合\r\n職業：サーバーサイドエンジニア\r\n実務経験：HTML/CSS 3年、Javascript 2年、Ruby/Rails 2年\r\n対応可能日時：平日19時以降"
         .text-center
-          = f.submit "はじめる", class: "btn submitBtn"
+          = f.submit "登録する", class: "signupBtn"
           = render "devise/shared/links"
 
     .tech-up_description
