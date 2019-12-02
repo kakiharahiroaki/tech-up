@@ -19,3 +19,5 @@
         .userAction_logout.userAction_common
           = link_to(content_tag(:i, "", class: 'fas fa-cog fa-3x'), destroy_user_session_path, method: :delete)
           %span ログアウト
+      
+        = link_to "Back", users_path, class:"backBtn"

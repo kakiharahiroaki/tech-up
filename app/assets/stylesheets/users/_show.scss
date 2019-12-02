@@ -36,9 +36,14 @@ body{
 }
 .userAction{
   display: flex;
-  margin-left: 40%;
+  margin-left: 0 auto;
   padding-bottom: 5%;
   font-size: 120%;
+  .backBtn{
+    margin-left: 3%;
+    margin-top: 2%;
+    font-size: 120%;
+  }
 }
 
 .userAction_edit.userAction_common{
